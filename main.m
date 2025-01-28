@@ -2,6 +2,9 @@
 load('./data/3D2Dpoints.mat');  % Charger les points 3D et 2D
 img = imread('data/cubeRGB.JPG'); % Charger l'image RGB
 
+
+X = Xmodel
+
 % Convertir les cellules en tableaux numériques si nécessaire
 if iscell(x)
     x = x{1, 1}; % Extraire les données de la cellule
@@ -95,6 +98,11 @@ P = P * sign_det_M; % Normalisation de P
 % Calcul du centre de la caméra C avec SVD
 [~, ~, V] = svd(P);
 C = V(1:3, end) / V(end, end); % Centre de la caméra
+
+
+
+% Save the reprojection visualization as an image
+saveas(gcf, 'screenshots/reprojection.png');
 
 %load('data\rq.m') : Doesn't work, needs to be a mat file
 % Add the data directory to the MATLAB path
