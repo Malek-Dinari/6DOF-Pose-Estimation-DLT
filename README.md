@@ -31,11 +31,7 @@ The goal of this project is to estimate the pose (position and orientation) of a
 
 3.  Run the `main.m` script:
 
-    matlab
-
-    Copy
-
-    main;
+    matlab -> run("main.m");
 
 ## Methodology
 -----------
